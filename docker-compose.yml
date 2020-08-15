@@ -1,0 +1,16 @@
+version: "3.3"
+
+services:
+  ampvel:
+    image: ampvel:01
+    build: ./ampvel
+    environment: 
+      - HOST=192.168.0.31
+      - PORT=4588
+    networks:
+      - ampvel
+    ports:
+      - 4588:4588
+
+networks:
+  ampvel:
