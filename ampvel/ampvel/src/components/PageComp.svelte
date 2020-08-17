@@ -12,7 +12,7 @@
 	}
 
 	export let ALPHA;
-    const ADDR = `http://192.168.0.31:6789/${ALPHA}`
+    const ADDR = `http://192.168.0.74:6790/${ALPHA}`
 
 	let AS = [];
 	onMount(async () => {

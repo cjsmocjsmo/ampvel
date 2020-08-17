@@ -23,11 +23,11 @@
     let zoo = (x) => {
       let promise = getSongURL().catch(err => console.log(err));
       async function getSongURL() {
-        fetch(`http://192.168.0.31:6789/PathArt?selected=${x}`, {mode: "cors", method: "GET"})
+        fetch(`http://192.168.0.74:6790/PathArt?selected=${x}`, {mode: "cors", method: "GET"})
         .then(r => r.json())
         .then(data => {
           let oid = data.HttpMusicPath
-          FOOID = `http://192.168.0.31:6789` + oid
+          FOOID = `http://192.168.0.74:6790` + oid
           ARTIST = data.Artist
           SONG = data.Song
           songURLstore.set(FOOID)

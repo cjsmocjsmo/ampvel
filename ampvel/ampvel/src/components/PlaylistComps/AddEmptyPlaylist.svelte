@@ -19,7 +19,7 @@
     }
 	
 	async function getAddPlayListNameToDB() {
-		fetch(`http://192.168.0.31:6789/AddPlayListNameToDB?playlistname=${newplname}`, {mode: "cors", method: "GET"})
+		fetch(`http://192.168.0.74:6790/AddPlayListNameToDB?playlistname=${newplname}`, {mode: "cors", method: "GET"})
 		.then(r => r.json())
 		.then(data => {
             let pname = data.pnames;

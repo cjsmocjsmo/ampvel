@@ -5,10 +5,10 @@
     export let songs;
 
     async function getSongURL(x) {
-        fetch(`http://192.168.0.31:6789/PathArt?selected=${x}`, {mode: "cors", method: "GET"})
+        fetch(`http://192.168.0.74:6790/PathArt?selected=${x}`, {mode: "cors", method: "GET"})
         .then(r => r.json())
         .then(data => {
-          let SONGURL = `http://192.168.0.31:6789` + data.HttpMusicPath
+          let SONGURL = `http://192.168.0.74:6790` + data.HttpMusicPath
           songURLstore.set(SONGURL)
           artiststore.set(data.Artist)
           songstore.set(data.Song)

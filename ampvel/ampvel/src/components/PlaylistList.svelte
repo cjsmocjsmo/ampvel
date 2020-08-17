@@ -10,7 +10,7 @@
     let PLCOUNT = 0;
 
 	onMount(async function getAllPlaylists() {
-		fetch(`http://192.168.0.31:6789/AllPlaylists`, {mode: "cors", method: "GET"})
+		fetch(`http://192.168.0.74:6790/AllPlaylists`, {mode: "cors", method: "GET"})
 		.then(r => r.json())
 		.then(data => {
             let cunt = [];
