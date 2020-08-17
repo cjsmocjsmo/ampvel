@@ -1,5 +1,5 @@
 <script>
-    import { songURLstore, artiststore, songstore } from './PlayerStore.js'
+    import { songURLstore, artiststore, songstore, ampvel } from './PlayerStore.js'
     import AlbumCard from "./AlbumCard.svelte";
     import Player from '../components/Player.svelte'
     export let infoalbums = [];
@@ -23,7 +23,7 @@
     let SONGS = [] ;
     let THUMB ; 
     async function getAlbumInfoalbums2() {
-        fetch(`http://192.168.0.74:6790/ImageSongsForAlbum?selected=${selected}`, {mode: "cors", method: "GET"})
+        fetch(`${ampvel}/ImageSongsForAlbum?selected=${selected}`, {mode: "cors", method: "GET"})
         .then(r => r.json())
         .then(data => {
             THUMB = data.getimgsonalb.thumbnail
@@ -43,7 +43,7 @@
         selected = x
         let promise = getSongURL().catch(err => console.log(err));
         async function getSongURL() {
-            fetch(`http://192.168.0.74:6790/PathArt?selected=${x}`, {mode: "cors", method: "GET"})
+            fetch(`${ampvel}/PathArt?selected=${x}`, {mode: "cors", method: "GET"})
                 .then(r => r.json())
                 .then(data => {
                     let oid = data.HttpMusicPath

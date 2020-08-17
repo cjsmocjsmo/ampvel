@@ -1,5 +1,6 @@
 <script>
 	import SongPage from '../components/SongPage.svelte';
+	import {ampvel} from '../components/PlayerStore.js'
 
 	let selected = 1;
 	let SONGS = [];

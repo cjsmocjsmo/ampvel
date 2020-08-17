@@ -1,9 +1,9 @@
 <script>
-    import { playliststore } from './PlaylistListStore.js'
+    import { playliststore, ampvel } from '../PlayerStore.js'
     export let PLID;
     let NPL;
 	async function getDeletePlaylistFromDB() {
-        fetch(`http://192.168.0.74:6790/DeletePlaylistFromDB?playlistid=${PLID}`, {mode: "cors", method: "GET"})
+        fetch(`${ampvel}/DeletePlaylistFromDB?playlistid=${PLID}`, {mode: "cors", method: "GET"})
         .then(r => r.json())
         .then(data => {
             NPL = data.npl;

@@ -1,6 +1,6 @@
 <script>
     import { text } from "svelte/internal";
-    import { playliststore } from './PlaylistListStore.js'
+    import { playliststore, ampvel } from '../PlayerStore.js'
 
     let visible = false;
     let fuck = () => {
@@ -19,7 +19,7 @@
     }
 	
 	async function getAddPlayListNameToDB() {
-		fetch(`http://192.168.0.74:6790/AddPlayListNameToDB?playlistname=${newplname}`, {mode: "cors", method: "GET"})
+		fetch(`${ampvel}/AddPlayListNameToDB?playlistname=${newplname}`, {mode: "cors", method: "GET"})
 		.then(r => r.json())
 		.then(data => {
             let pname = data.pnames;

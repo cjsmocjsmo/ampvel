@@ -2,7 +2,7 @@
     import DeletePlaylist from './PlaylistComps/DeletePlaylist.svelte'
     import LoadPlaylist from './PlaylistComps/LoadPlaylist.svelte'
     import EditPlaylist from './PlaylistComps/EditPlaylist.svelte'
-    import { playliststore, playlistidstore } from './PlaylistComps/PlaylistListStore.js'
+    import { playliststore, playlistidstore, ampvel} from './PlayerStore.js'
     import { onMount } from 'svelte';
 
     let plid = "";
@@ -10,7 +10,7 @@
     let PLCOUNT = 0;
 
 	onMount(async function getAllPlaylists() {
-		fetch(`http://192.168.0.74:6790/AllPlaylists`, {mode: "cors", method: "GET"})
+		fetch(`${ampaddr}/AllPlaylists`, {mode: "cors", method: "GET"})
 		.then(r => r.json())
 		.then(data => {
             let cunt = [];

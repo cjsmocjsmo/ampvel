@@ -1,5 +1,5 @@
 <script>
-    import { songURLstore, artiststore, songstore } from './PlayerStore.js'
+    import { songURLstore, artiststore, songstore, ampvel } from './PlayerStore.js'
     import Player from '../components/Player.svelte';
     import { component_subscribe } from 'svelte/internal';
     export let artist;
@@ -23,11 +23,11 @@
     let zoo = (x) => {
       let promise = getSongURL().catch(err => console.log(err));
       async function getSongURL() {
-        fetch(`http://192.168.0.74:6790/PathArt?selected=${x}`, {mode: "cors", method: "GET"})
+        fetch(`${ampvle}/PathArt?selected=${x}`, {mode: "cors", method: "GET"})
         .then(r => r.json())
         .then(data => {
           let oid = data.HttpMusicPath
-          FOOID = `http://192.168.0.74:6790` + oid
+          FOOID = ampvel + oid
           ARTIST = data.Artist
           SONG = data.Song
           songURLstore.set(FOOID)

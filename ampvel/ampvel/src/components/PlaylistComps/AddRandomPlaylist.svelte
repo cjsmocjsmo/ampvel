@@ -1,5 +1,5 @@
 <script>
-    import { playliststore } from './PlaylistListStore'
+    import { playliststore, ampvel } from '../PlayerStore.js'
 
     let radvisible = false;
     let randvis = () => {
@@ -22,7 +22,7 @@
     }
 	
 	async function getAddRandomPlaylist() {
-		await fetch(`http://192.168.0.74:6790/AddRandomPlaylist?playlistname=${plname}&playlistcount=${plcount}`, {mode: "cors", method: "GET"})
+		await fetch(`${ampvel}/AddRandomPlaylist?playlistname=${plname}&playlistcount=${plcount}`, {mode: "cors", method: "GET"})
 		.then(r => r.json())
 		.then(data => {
             playlists = data.plists;

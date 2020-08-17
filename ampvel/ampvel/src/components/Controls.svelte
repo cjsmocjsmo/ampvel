@@ -1,7 +1,8 @@
 <script>
-	
+	import { movhttp } from './PlayerStore.js'
+
     async function getNext() {
-		fetch(`http://192.168.0.42:8181/Next`, {mode: "cors", method: "GET"})
+		fetch(`${movhttp}/Next`, {mode: "cors", method: "GET"})
 		.then(r => r.json())
 		.then(data => {
             console.log(data)
@@ -12,7 +13,7 @@
     }
 
 	async function getStop() {
-		fetch(`http://192.168.0.42:8181/Stop`, {mode: "cors", method: "GET"})
+		fetch(`${movhttp}/Stop`, {mode: "cors", method: "GET"})
 		.then(r => r.json())
 		.then(data => {
             console.log(data)
@@ -23,7 +24,7 @@
 	}
 	
 	async function getPrevious() {
-		fetch(`http://192.168.0.42:8181/Previous`, {mode: "cors", method: "GET"})
+		fetch(`${movhttp}/Previous`, {mode: "cors", method: "GET"})
 		.then(r => r.json())
 		.then(data => {
             console.log(data)
@@ -34,7 +35,7 @@
 	}
 
 	async function getPause() {
-		fetch(`http://192.168.0.42:8181/Pause`, {mode: "cors", method: "GET"})
+		fetch(`${movhttp}/Pause`, {mode: "cors", method: "GET"})
 		.then(r => r.json())
 		.then(data => {
             console.log(data)
@@ -46,7 +47,7 @@
 	}
 
 	async function getPlay() {
-		fetch(`http://192.168.0.42:8181/Play`, {mode: "cors", method: "GET"})
+		fetch(`${movhttp}/Play`, {mode: "cors", method: "GET"})
 		.then(r => r.json())
 		.then(data => {
             console.log(data)

@@ -1,10 +1,10 @@
 <script>
     export let MYDATA = [];
     export let movLOCALPLAY
-    import { localplayURL } from './PlayerStore'
+    import { localplayURL, omxaddr, movaddr } from './PlayerStore'
 
 	async function getPlayMov(mov) {
-		await fetch(`http://192.168.0.42:8888/playMediaReact?movie=${mov}`, {mode: "cors", method: "GET"})
+		await fetch(`${omxaddr}/playMediaReact?movie=${mov}`, {mode: "cors", method: "GET"})
 		.then(r => r.json())
 		.then(data => {
             console.log(data)
@@ -13,7 +13,7 @@
 	let handlegetMovClick = (x) => {
         if (movLOCALPLAY) {
             let foo = x.split("Movies", 2)
-            let newpath = `http://192.168.0.42:8081` + foo[1]
+            let newpath = movaddr + foo[1]
             localplayURL.set(newpath)
             console.log(newpath)
         } else {

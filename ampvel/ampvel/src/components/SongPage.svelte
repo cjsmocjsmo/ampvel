@@ -1,14 +1,14 @@
 <script>
-    import { songURLstore, artiststore, songstore, songidstore } from './PlayerStore.js'
-    import { playlistidstore } from './PlaylistComps/PlaylistListStore.js'
+    import { songURLstore, artiststore, songstore, songidstore, ampvel} from './PlayerStore.js'
+    import { playlistidstore } from './PlayerStore.js'
     import { each } from 'svelte/internal';
     export let songs;
 
     async function getSongURL(x) {
-        fetch(`http://192.168.0.74:6790/PathArt?selected=${x}`, {mode: "cors", method: "GET"})
+        fetch(`${ampaddr}/PathArt?selected=${x}`, {mode: "cors", method: "GET"})
         .then(r => r.json())
         .then(data => {
-          let SONGURL = `http://192.168.0.74:6790` + data.HttpMusicPath
+          let SONGURL = ampaddr + data.HttpMusicPath
           songURLstore.set(SONGURL)
           artiststore.set(data.Artist)
           songstore.set(data.Song)

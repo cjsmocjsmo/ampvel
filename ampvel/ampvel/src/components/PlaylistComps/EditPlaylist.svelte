@@ -1,5 +1,6 @@
 <script>
     export let PLID
+    import {ampvel} from '../PlayerStore.js'
  
     let handleAllPlaylistSongsFromDBSubmit = () => {
         editvisible = true
@@ -8,7 +9,7 @@
 	let songlist;
     let songlist_count;
 	async function getAllPlaylistSongsFromDB() {
-		fetch(`http://192.168.0.74:6790/AllPlaylistSongsFromDB?playlistid=${PLID}`, {mode: "cors", method: "GET"})
+		fetch(`${ampvel}/AllPlaylistSongsFromDB?playlistid=${PLID}`, {mode: "cors", method: "GET"})
 		.then(r => r.json())
 		.then(data => {
             songlist = data.taz;
