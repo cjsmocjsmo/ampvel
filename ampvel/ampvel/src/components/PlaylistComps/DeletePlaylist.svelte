@@ -3,7 +3,7 @@
     export let PLID;
     let NPL;
 	async function getDeletePlaylistFromDB() {
-        fetch(`http://192.168.0.31:6789/DeletePlaylistFromDB?playlistid=${PLID}`, {mode: "cors", method: "GET"})
+        fetch(`http://192.168.0.74:6790/DeletePlaylistFromDB?playlistid=${PLID}`, {mode: "cors", method: "GET"})
         .then(r => r.json())
         .then(data => {
             NPL = data.npl;

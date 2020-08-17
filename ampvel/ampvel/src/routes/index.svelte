@@ -5,7 +5,7 @@
 	let albums;
 	let mp3;
 	onMount(async () => {
-		fetch(`http://192.168.0.31:6789/Stats`, {mode: "cors", method: "GET"})
+		fetch(`http://192.168.0.74:6790/Stats`, {mode: "cors", method: "GET"})
 		.then(r => r.json())
 		.then(data => {
 			STATS = data.stats;

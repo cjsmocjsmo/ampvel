@@ -10,7 +10,7 @@
 	let promise = getAlbumInfo().catch(err => console.log(err));
 	
 	async function getAlbumInfo() {
-		await fetch(`http://192.168.0.31:6789/AlbumInfo?selected=${selected}`, {mode: "cors", method: "GET"})
+		await fetch(`http://192.168.0.74:6790/AlbumInfo?selected=${selected}`, {mode: "cors", method: "GET"})
 		.then(r => r.json())
 		.then(data => {
 			if (data.albs.length != 0) {

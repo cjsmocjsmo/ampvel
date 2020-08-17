@@ -6,7 +6,7 @@
  
     let promise = getSongInfo().catch(err => console.log(err));
 	async function getSongInfo() {
-		await fetch(`http://192.168.0.31:6789/SongInfo?selected=${selected}`, {mode: "cors", method: "GET"})
+		await fetch(`http://192.168.0.74:6790/SongInfo?selected=${selected}`, {mode: "cors", method: "GET"})
 		.then(r => r.json())
 		.then(data => {
 			SONGS = data.song;

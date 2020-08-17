@@ -8,7 +8,7 @@
 
 	let promise = getArtistInfo().catch(err => console.log(err));
 	async function getArtistInfo() {
-		await fetch(`http://192.168.0.31:6789/ArtistInfo?selected=${selected}`, {mode: "cors", method: "GET"})
+		await fetch(`http://192.168.0.74:6790/ArtistInfo?selected=${selected}`, {mode: "cors", method: "GET"})
 		.then(r => r.json())
 		.then(data => {
 			ART = data.arts

@@ -22,7 +22,7 @@
     }
 	
 	async function getAddRandomPlaylist() {
-		await fetch(`http://192.168.0.31:6789/AddRandomPlaylist?playlistname=${plname}&playlistcount=${plcount}`, {mode: "cors", method: "GET"})
+		await fetch(`http://192.168.0.74:6790/AddRandomPlaylist?playlistname=${plname}&playlistcount=${plcount}`, {mode: "cors", method: "GET"})
 		.then(r => r.json())
 		.then(data => {
             playlists = data.plists;

@@ -4,7 +4,7 @@
 
 	let SONGS = [];
 	async function getCreatePlayerPlaylist() {
-        let addr = `http://192.168.0.31:6789/CreatePlayerPlaylist?playlistid=${PLID}`
+        let addr = `http://192.168.0.74:6790/CreatePlayerPlaylist?playlistid=${PLID}`
         console.log(addr)
 		await fetch(addr, {mode: "cors", method: "GET"})
 		.then(r => r.json())
