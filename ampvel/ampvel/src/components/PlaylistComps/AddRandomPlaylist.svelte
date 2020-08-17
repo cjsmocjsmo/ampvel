@@ -9,6 +9,11 @@
             radvisible = true
         }
     }
+    
+    let ampvel_value;
+    const unsubampvel = ampvel.subscribe(value => {
+      ampvel_value = value
+    })
 
     let plname;
     let plcount;
@@ -22,7 +27,7 @@
     }
 	
 	async function getAddRandomPlaylist() {
-		await fetch(`${ampvel}/AddRandomPlaylist?playlistname=${plname}&playlistcount=${plcount}`, {mode: "cors", method: "GET"})
+		await fetch(`${ampvel_value}/AddRandomPlaylist?playlistname=${plname}&playlistcount=${plcount}`, {mode: "cors", method: "GET"})
 		.then(r => r.json())
 		.then(data => {
             playlists = data.plists;

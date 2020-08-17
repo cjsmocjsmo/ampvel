@@ -20,10 +20,15 @@
         let promise = getAlbumInfoalbums2().catch(err => console.log(err));
     }
 
+    let ampvel_value;
+    const unsubampvel = ampvel.subscribe(value => {
+      ampvel_value = value
+    })
+
     let SONGS = [] ;
     let THUMB ; 
     async function getAlbumInfoalbums2() {
-        fetch(`${ampvel}/ImageSongsForAlbum?selected=${selected}`, {mode: "cors", method: "GET"})
+        fetch(`${ampvel_value}/ImageSongsForAlbum?selected=${selected}`, {mode: "cors", method: "GET"})
         .then(r => r.json())
         .then(data => {
             THUMB = data.getimgsonalb.thumbnail
@@ -43,13 +48,13 @@
         selected = x
         let promise = getSongURL().catch(err => console.log(err));
         async function getSongURL() {
-            fetch(`${ampvel}/PathArt?selected=${x}`, {mode: "cors", method: "GET"})
+            fetch(`${ampvel_value}/PathArt?selected=${x}`, {mode: "cors", method: "GET"})
                 .then(r => r.json())
                 .then(data => {
                     let oid = data.HttpMusicPath
                     ARTIST = data.Artist
                     SONG = data.Song
-                    FOOID = `http://192.168.0.74:6790` + oid
+                    FOOID = ampvel_value + oid
                     songURLstore.set(FOOID)
                     artiststore.set(ARTIST)
                     songstore.set(SONG)

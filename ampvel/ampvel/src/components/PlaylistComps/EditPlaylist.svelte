@@ -6,10 +6,16 @@
         editvisible = true
         let promise = getAllPlaylistSongsFromDB().catch(err => console.log(err));
     }
+
+    let ampvel_value;
+    const unsubampvel = ampvel.subscribe(value => {
+      ampvel_value = value
+    })
+
 	let songlist;
     let songlist_count;
 	async function getAllPlaylistSongsFromDB() {
-		fetch(`${ampvel}/AllPlaylistSongsFromDB?playlistid=${PLID}`, {mode: "cors", method: "GET"})
+		fetch(`${ampvel_value}/AllPlaylistSongsFromDB?playlistid=${PLID}`, {mode: "cors", method: "GET"})
 		.then(r => r.json())
 		.then(data => {
             songlist = data.taz;

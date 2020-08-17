@@ -4,11 +4,17 @@
     import { each } from 'svelte/internal';
     export let songs;
 
+    let ampvel_value;
+    const unsubampvel = ampvel.subscribe(value => {
+      ampvel_value = value
+    })
+
     async function getSongURL(x) {
-        fetch(`${ampaddr}/PathArt?selected=${x}`, {mode: "cors", method: "GET"})
+        let addr = `${ampvel_value}/PathArt?selected=${x}`
+        fetch(addr, {mode: "cors", method: "GET"})
         .then(r => r.json())
         .then(data => {
-          let SONGURL = ampaddr + data.HttpMusicPath
+          let SONGURL = ampvel_value + data.HttpMusicPath
           songURLstore.set(SONGURL)
           artiststore.set(data.Artist)
           songstore.set(data.Song)

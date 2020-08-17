@@ -11,6 +11,11 @@
         }
     }
 
+    let ampvel_value;
+    const unsubampvel = ampvel.subscribe(value => {
+      ampvel_value = value
+    })
+
     let newplname;
     async function handleAddPlayListNameToDBSubmit(event) {
         visible = false;
@@ -19,7 +24,7 @@
     }
 	
 	async function getAddPlayListNameToDB() {
-		fetch(`${ampvel}/AddPlayListNameToDB?playlistname=${newplname}`, {mode: "cors", method: "GET"})
+		fetch(`${ampvel_value}/AddPlayListNameToDB?playlistname=${newplname}`, {mode: "cors", method: "GET"})
 		.then(r => r.json())
 		.then(data => {
             let pname = data.pnames;

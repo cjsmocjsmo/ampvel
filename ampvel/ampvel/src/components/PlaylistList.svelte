@@ -9,8 +9,13 @@
     let PLNAMES;
     let PLCOUNT = 0;
 
+    let ampvel_value;
+    const unsubampvel = ampvel.subscribe(value => {
+      ampvel_value = value
+    })
+
 	onMount(async function getAllPlaylists() {
-		fetch(`${ampaddr}/AllPlaylists`, {mode: "cors", method: "GET"})
+		fetch(`${ampvel_value}/AllPlaylists`, {mode: "cors", method: "GET"})
 		.then(r => r.json())
 		.then(data => {
             let cunt = [];

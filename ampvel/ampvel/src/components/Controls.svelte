@@ -23,8 +23,14 @@
         let promise = getStop().catch(err => console.log(err));
 	}
 	
+	let movhttp_value;
+    const unsubampvel = movhttp_value.subscribe(value => {
+      movhttp_value = value
+    })
+
+
 	async function getPrevious() {
-		fetch(`${movhttp}/Previous`, {mode: "cors", method: "GET"})
+		fetch(`${movhttp_value}/Previous`, {mode: "cors", method: "GET"})
 		.then(r => r.json())
 		.then(data => {
             console.log(data)
@@ -35,7 +41,7 @@
 	}
 
 	async function getPause() {
-		fetch(`${movhttp}/Pause`, {mode: "cors", method: "GET"})
+		fetch(`${movhttp_value}/Pause`, {mode: "cors", method: "GET"})
 		.then(r => r.json())
 		.then(data => {
             console.log(data)
@@ -47,7 +53,7 @@
 	}
 
 	async function getPlay() {
-		fetch(`${movhttp}/Play`, {mode: "cors", method: "GET"})
+		fetch(`${movhttp_value}/Play`, {mode: "cors", method: "GET"})
 		.then(r => r.json())
 		.then(data => {
             console.log(data)

@@ -2,8 +2,14 @@
     import { playliststore, ampvel } from '../PlayerStore.js'
     export let PLID;
     let NPL;
+
+    let ampvel_value;
+    const unsubampvel = ampvel.subscribe(value => {
+      ampvel_value = value
+    })
+
 	async function getDeletePlaylistFromDB() {
-        fetch(`${ampvel}/DeletePlaylistFromDB?playlistid=${PLID}`, {mode: "cors", method: "GET"})
+        fetch(`${ampvel_value}/DeletePlaylistFromDB?playlistid=${PLID}`, {mode: "cors", method: "GET"})
         .then(r => r.json())
         .then(data => {
             NPL = data.npl;

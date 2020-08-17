@@ -2,9 +2,14 @@
     export let PLID;
     import {ampvel} from '../PlayerStore.js'
 
+    let ampvel_value;
+    const unsubampvel = ampvel.subscribe(value => {
+      ampvel_value = value
+    })
+
 	let SONGS = [];
 	async function getCreatePlayerPlaylist() {
-        let addr = `${ampvel}/CreatePlayerPlaylist?playlistid=${PLID}`
+        let addr = `${ampvel_value}/CreatePlayerPlaylist?playlistid=${PLID}`
         console.log(addr)
 		await fetch(addr, {mode: "cors", method: "GET"})
 		.then(r => r.json())

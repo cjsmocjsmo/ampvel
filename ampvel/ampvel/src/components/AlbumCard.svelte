@@ -17,17 +17,23 @@
         cardvisible = true;
       }
     }
+
+    let ampvel_value;
+    const unsubampvel = ampvel.subscribe(value => {
+      ampvel_value = value
+    })
+
     let SONG = "";
     let ARTIST = "";
     let FOOID = "";
     let zoo = (x) => {
       let promise = getSongURL().catch(err => console.log(err));
       async function getSongURL() {
-        fetch(`${ampvle}/PathArt?selected=${x}`, {mode: "cors", method: "GET"})
+        fetch(`${ampvel_value}/PathArt?selected=${x}`, {mode: "cors", method: "GET"})
         .then(r => r.json())
         .then(data => {
           let oid = data.HttpMusicPath
-          FOOID = ampvel + oid
+          FOOID = ampvel_value + oid
           ARTIST = data.Artist
           SONG = data.Song
           songURLstore.set(FOOID)

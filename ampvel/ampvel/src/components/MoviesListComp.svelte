@@ -3,8 +3,19 @@
     export let movLOCALPLAY
     import { localplayURL, omxaddr, movaddr } from './PlayerStore'
 
+    let omxaddr_value;
+    const unsubampvel = omxaddr.subscribe(value => {
+      omxaddr_value = value
+    })
+
+    let movaddr_value;
+    const unsubmovaddr = movaddr.subscribe(value => {
+      movaddr_value = value
+    })
+
+
 	async function getPlayMov(mov) {
-		await fetch(`${omxaddr}/playMediaReact?movie=${mov}`, {mode: "cors", method: "GET"})
+		await fetch(`${omxaddr_value}/playMediaReact?movie=${mov}`, {mode: "cors", method: "GET"})
 		.then(r => r.json())
 		.then(data => {
             console.log(data)
@@ -13,7 +24,7 @@
 	let handlegetMovClick = (x) => {
         if (movLOCALPLAY) {
             let foo = x.split("Movies", 2)
-            let newpath = movaddr + foo[1]
+            let newpath = movaddr_value + foo[1]
             localplayURL.set(newpath)
             console.log(newpath)
         } else {
