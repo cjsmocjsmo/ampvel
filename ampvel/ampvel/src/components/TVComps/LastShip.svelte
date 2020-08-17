@@ -55,7 +55,7 @@
             let newpath = `http://192.168.0.42:8082` + foo[1]
             console.log(newpath)
             TVlocalplayURL.set(newpath)
-
+            visibleLS = false
         } else {
             let promise = getPlayMedia(media).catch(err => console.log(err));
             visibleLS = false
