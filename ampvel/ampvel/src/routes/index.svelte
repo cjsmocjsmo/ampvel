@@ -118,7 +118,19 @@
 		<button on:click={handleTVUpdateClick} >TVShows Setup</button>
 	{/if}
 </nav>
+
+<iframe src="https://art19.com/shows/cbs-evening-news/embed\"></iframe>
+
+<iframe src="https://art19.com/shows/cbs-this-morning/embed\"></iframe>
+
 <style>
+
+	iframe {
+		width: 720px;
+		height: 505px;
+		border: 0 none;
+	}
+
 	#MovSetup1 {
 		/* background-color: red; */
 		padding: 7px;

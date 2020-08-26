@@ -11,6 +11,10 @@ services:
       - ampvel
     ports:
       - 4588:4588
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: always
 
 networks:
   ampvel:
