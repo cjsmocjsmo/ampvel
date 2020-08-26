@@ -111,17 +111,17 @@
 </ul>
 
 <nav>
-	{#if movcount < 1}
+	{#if movcount < 1 || movcount === "undefined"}
 		<button on:click={handleMovUpdateClick} >Movie Setup</button>
 	{/if}
-	{#if tvcount < 1}
+	{#if tvcount < 1 || tvcount === "undefined"}
 		<button on:click={handleTVUpdateClick} >TVShows Setup</button>
 	{/if}
 </nav>
 
-<iframe src="https://art19.com/shows/cbs-evening-news/embed\"></iframe>
+<!-- <iframe src="https://art19.com/shows/cbs-evening-news/embed\"></iframe>
 
-<iframe src="https://art19.com/shows/cbs-this-morning/embed\"></iframe>
+<iframe src="https://art19.com/shows/cbs-this-morning/embed\"></iframe> -->
 
 <style>
 
