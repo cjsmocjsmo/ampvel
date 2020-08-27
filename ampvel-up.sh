@@ -1,3 +1,3 @@
 #!/bin/bash
-
-cd /home/pi/ampvel && docker-compose up -d
+docker start Movies-httpd && docker start TVShows-httpd;
+cd /home/pi/ampvel && docker-compose up -d;
