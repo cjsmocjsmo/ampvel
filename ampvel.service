@@ -1,12 +1,12 @@
 [Unit]
 Description=Ampvel Container
 Requires=docker.service
-After=docker.service
+After=yts.service
 
 [Service]
 Restart=always
-ExecStart=/usr/bin/docker start -a ampvel_ampvel_1
-ExecStop=/usr/bin/docker stop -t 2 ampvel_ampvel_1
+ExecStart=/bin/sh /home/pi/ampvel/ampvel-up.sh
+ExecStop=/bin/sh /home/pi/ampvel/ampvel-down.sh
 
 [Install]
 WantedBy=default.target
