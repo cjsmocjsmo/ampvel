@@ -45,7 +45,7 @@
 		<li><a href="tvshows">tvshows</a></li>
 		<li><a href="artists">artists</a></li>
 		<li><a href="albums">albums</a></li>
-		<li><a  href="songs">songs</a></li>
+		<li><a href="songs">songs</a></li>
 		<li><a href="playlists">playlists</a></li>
 		<!-- <li><a class="foo" href="http://192.168.0.42:4566/">YTS-EZTV</a></li>
 		<li><a class="foo" href="http://192.168.0.42:8081/">ReGoMo</a></li> -->

@@ -23,4 +23,4 @@ export const movaddr = writable(`http://192.168.0.42:8081`)
 
 
 //omxserver
-export const movhttp = writable("192.168.0.42:8181")
+export const movhttp = writable(`192.168.0.42:8181`)

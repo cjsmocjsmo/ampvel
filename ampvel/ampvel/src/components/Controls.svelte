@@ -24,7 +24,8 @@
 	}
 	
 	let movhttp_value;
-    const unsubampvel = movhttp_value.subscribe(value => {
+	const unsubampvel = movhttp.subscribe(value => {
+    // const unsubampvel = movhttp_value.subscribe(value => {
       movhttp_value = value
     })
 
