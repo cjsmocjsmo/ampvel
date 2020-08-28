@@ -1,14 +1,11 @@
 <script>
 	import { movhttp } from './PlayerStore.js'
 	
-	// let movhttp_value;
-	let ADDR
+	let movhttp_value;
 	const unsubampvel = movhttp.subscribe(value => {
-		ADDR = value
-    // const unsubampvel = movhttp_value.subscribe(value => {
-    //   movhttp_value = value
+      movhttp_value = value
 	})
-	// const ADDR = "http://" + movhttp_value
+	const ADDR = "http://" + movhttp_value
 	const NADDR = ADDR + "/Next"
 	const SADDR = ADDR + "/Stop"
 	const PREADDR = ADDR + "/Previous"
