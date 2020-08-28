@@ -1,7 +1,7 @@
 [Unit]
 Description=Ampvel Container
 Requires=docker.service
-After=yts.service
+After=docker.service
 
 [Service]
 Restart=always

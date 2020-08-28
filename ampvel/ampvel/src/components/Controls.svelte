@@ -1,8 +1,23 @@
 <script>
 	import { movhttp } from './PlayerStore.js'
+	
+	// let movhttp_value;
+	let ADDR
+	const unsubampvel = movhttp.subscribe(value => {
+		ADDR = value
+    // const unsubampvel = movhttp_value.subscribe(value => {
+    //   movhttp_value = value
+	})
+	// const ADDR = "http://" + movhttp_value
+	const NADDR = ADDR + "/Next"
+	const SADDR = ADDR + "/Stop"
+	const PREADDR = ADDR + "/Previous"
+	const PADDR = ADDR + "/Pause"
+	const PLAYADDR = ADDR + "/Play"
 
+	
     async function getNext() {
-		fetch(`${movhttp}/Next`, {mode: "cors", method: "GET"})
+		fetch(NADDR, {mode: "cors", method: "GET"})
 		.then(r => r.json())
 		.then(data => {
             console.log(data)
@@ -13,7 +28,7 @@
     }
 
 	async function getStop() {
-		fetch(`${movhttp}/Stop`, {mode: "cors", method: "GET"})
+		fetch(SADDR, {mode: "cors", method: "GET"})
 		.then(r => r.json())
 		.then(data => {
             console.log(data)
@@ -22,16 +37,9 @@
     let handleStopSubmit = () => {
         let promise = getStop().catch(err => console.log(err));
 	}
-	
-	let movhttp_value;
-	const unsubampvel = movhttp.subscribe(value => {
-    // const unsubampvel = movhttp_value.subscribe(value => {
-      movhttp_value = value
-    })
-
 
 	async function getPrevious() {
-		fetch(`${movhttp_value}/Previous`, {mode: "cors", method: "GET"})
+		fetch(PREADDR, {mode: "cors", method: "GET"})
 		.then(r => r.json())
 		.then(data => {
             console.log(data)
@@ -42,7 +50,7 @@
 	}
 
 	async function getPause() {
-		fetch(`${movhttp_value}/Pause`, {mode: "cors", method: "GET"})
+		fetch(PADDR, {mode: "cors", method: "GET"})
 		.then(r => r.json())
 		.then(data => {
             console.log(data)
@@ -54,7 +62,7 @@
 	}
 
 	async function getPlay() {
-		fetch(`${movhttp_value}/Play`, {mode: "cors", method: "GET"})
+		fetch(PLAYADDR, {mode: "cors", method: "GET"})
 		.then(r => r.json())
 		.then(data => {
             console.log(data)
