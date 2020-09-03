@@ -21,8 +21,10 @@
 				const movfspath = da.movfspath
 				const movname = da.movname
 				const movyear = da.movyear
-				let np = da.thumbpath.split("/", 5)
-				const thumbpath = np[4]
+				const thumbpath = da.thumbpath
+				// let np = da.thumbpath.split("/", 5)
+				// const thumbpath = np[4]
+
 				return [carosthumb, catagory, dirpath, filepath, genre, mediaid, movfspath, movname, movyear, thumbpath]
 			})
 		}).catch(err => console.log(err));
