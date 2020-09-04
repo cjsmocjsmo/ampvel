@@ -23,9 +23,15 @@
 				const movyear = da.movyear
 				// const thumbpath = da.thumbpath
 				console.log(da.thumbpath)
-				let np = da.thumbpath.split("/", 5)
-				console.log(np.length)
-				const thumbpath = np[4]
+				const addr = "http://192.168.0.42:8888"
+				const thumbpath = addr + da.thumbpath
+				console.log(thumbpath)
+				// let np = da.thumbpath.split("/", 5)
+				// console.log(np.length)
+				// console.log(np)
+				// console.log(np[4])
+				// const thumbpath = np[4]
+				// const thumbpath = np
 
 				return [carosthumb, catagory, dirpath, filepath, genre, mediaid, movfspath, movname, movyear, thumbpath]
 			})
