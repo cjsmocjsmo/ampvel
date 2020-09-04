@@ -21,15 +21,24 @@
 				const movfspath = da.movfspath
 				const movname = da.movname
 				const movyear = da.movyear
-				// const thumbpath = da.thumbpath
+
 				console.log(da.thumbpath)
 				const addr = "http://192.168.0.42:8888"
-				const thumbpath = addr + da.thumbpath
+				let np = da.thumbpath.split("/", 5)
+				let newpath = "/" + np[1] + "/" + np[2] + "/" + np[3] + "/" + np[4]
+				console.log("this is new path")
+				console.log(newpath)
+				// const thumbpath = da.thumbpath
+				
+				
+				const thumbpath = addr + newpath
 				console.log(thumbpath)
-				// let np = da.thumbpath.split("/", 5)
+				
 				// console.log(np.length)
 				// console.log(np)
 				// console.log(np[4])
+
+				
 				// const thumbpath = np[4]
 				// const thumbpath = np
 
