@@ -23,7 +23,7 @@
 				const movyear = da.movyear
 				const addr = "http://192.168.0.42:8083"
 				let np = da.thumbpath.split("/", 5)
-				let newpath = "/" + np[3]
+				let newpath = "/" + np[4]
 				const thumbpath = addr + newpath
 				console.log(thumbpath)
 				return [carosthumb, catagory, dirpath, filepath, genre, mediaid, movfspath, movname, movyear, thumbpath]
