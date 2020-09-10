@@ -2,7 +2,7 @@ version: "3.3"
 
 services:
   ampvel:
-    image: ampvel:06
+    image: ampvel:07
     build: ./ampvel
     environment: 
       - HOST=192.168.0.31
