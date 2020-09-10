@@ -21,6 +21,7 @@
 				const movfspath = da.movfspath
 				const movname = da.movname
 				const movyear = da.movyear
+				console.log(da.thumbpath)
 				const addr = "http://192.168.0.42:8888/"
 				let np = da.thumbpath.split("/")
 				let newpath =  np[1] + "/" + np[2]

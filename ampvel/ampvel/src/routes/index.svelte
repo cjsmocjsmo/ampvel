@@ -49,28 +49,58 @@
 	})
 
     
-	async function getMovUpdate() {
-		await fetch(`http://192.168.0.42:8888/Update`, {mode: "cors", method: "GET"})
+	async function getMovSetUp() {
+		await fetch(`http://192.168.0.42:8888/SetUp`, {mode: "cors", method: "GET"})
 		.then(r => r.json())
 		.then(data => {
 			console.log(data)
 		})
 	}
 
-	let handleMovUpdateClick = () => {
-		let promise = getMovUpdate().catch(err => console.log(err));
+	let handleMovSetUpClick = () => {
+		let promise = getMovSetUp().catch(err => console.log(err));
+
 	}
 
-	async function getTVUpdate() {
-		await fetch(`http://192.168.0.42:9999/Update`, {mode: "cors", method: "GET"})
+	async function getTVSetUp() {
+		await fetch(`http://192.168.0.42:9999/SetUp`, {mode: "cors", method: "GET"})
 		.then(r => r.json())
 		.then(data => {
 			console.log(data)
 		})
 	}
 
-	let handleTVUpdateClick = () => {
-		let promise = getTVUpdate().catch(err => console.log(err));
+	let handleTVSetUpClick = () => {
+		let promise = getTVSetUp().catch(err => console.log(err));
+	}
+
+
+
+
+
+	async function getMovUpDate() {
+		await fetch(`http://192.168.0.42:8888/UpDate`, {mode: "cors", method: "GET"})
+		.then(r => r.json())
+		.then(data => {
+			console.log(data)
+		})
+	}
+
+	let handleMovUpDateClick = () => {
+		let promise = getMovUpDate().catch(err => console.log(err));
+
+	}
+
+	async function getTVUpDate() {
+		await fetch(`http://192.168.0.42:9999/UpDate`, {mode: "cors", method: "GET"})
+		.then(r => r.json())
+		.then(data => {
+			console.log(data)
+		})
+	}
+
+	let handleTVUpDateClick = () => {
+		let promise = getTVUpDate().catch(err => console.log(err));
 	}
 
 </script>
@@ -112,11 +142,16 @@
 
 <nav>
 	{#if movcount < 1 || movcount === "undefined"}
-		<button on:click={handleMovUpdateClick} >Movie Setup</button>
+		<button on:click={handleMovSetUpClick} >Movie Setup</button>
 	{/if}
 	{#if tvcount < 1 || tvcount === "undefined"}
-		<button on:click={handleTVUpdateClick} >TVShows Setup</button>
+		<button on:click={handleTVSetUpClick} >TVShows Setup</button>
 	{/if}
+	{#if movcount > 0 || tvcount > 0 }
+		<button on:click={handleMovUpDateClick} >Movie Update</button>
+		<button on:click={handleTVUpDateClick} >TV Shows Update</button>
+	{/if}
+
 </nav>
 
 <!-- <iframe src="https://art19.com/shows/cbs-evening-news/embed\"></iframe>
