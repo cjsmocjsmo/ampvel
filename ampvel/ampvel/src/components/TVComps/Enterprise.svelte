@@ -48,10 +48,12 @@
 
     let handlePlayShow = (media) => {
         if (LP) {
+            console.log("this is media")
             console.log(media)
 
-            let foo = media.split("TVShows", 2)
-            let newpath = `http://192.168.0.42:8082` + foo[1]
+            // let foo = media.split("TVShows", 2)
+            let newpath = `http://192.168.0.42:8082` + "/" + media
+            console.log("this is newpath")
             console.log(newpath)
             TVlocalplayURL.set(newpath)
             visibleEnt = false
@@ -77,7 +79,10 @@
         {#if Entshowlistcount > 0}
             {#each Entshowlist as sshow }
                 <li>
-                    <a href="tvshows" on:click={handlePlayShow(sshow.movfspath)}>{sshow.title}</a>
+                    <!-- need to use filepath or create movfspath in shows.go -->
+                    
+                    <span>{sshow.tvfspath}</span>
+                    <a href="tvshows" on:click={handlePlayShow(sshow.tvfspath)}>{sshow.title}</a>
                     <span>{sshow.episode}</span>
                 </li>
             {/each}
