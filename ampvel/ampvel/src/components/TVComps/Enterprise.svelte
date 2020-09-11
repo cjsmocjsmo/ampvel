@@ -79,9 +79,6 @@
         {#if Entshowlistcount > 0}
             {#each Entshowlist as sshow }
                 <li>
-                    <!-- need to use filepath or create movfspath in shows.go -->
-                    
-                    <span>{sshow.tvfspath}</span>
                     <a href="tvshows" on:click={handlePlayShow(sshow.tvfspath)}>{sshow.title}</a>
                     <span>{sshow.episode}</span>
                 </li>
