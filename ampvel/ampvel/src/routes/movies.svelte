@@ -128,6 +128,11 @@
 		let promise = getMovies(movs).catch(err => console.log(err));
 	}
 
+	let handleJurassicParkClick = () => {
+		let movs = "intJurassicPark"
+		let promise = getMovies(movs).catch(err => console.log(err));
+	}
+
 	let visible = false
 	let fuck = () => {
         if (visible) {
@@ -171,6 +176,7 @@
 		<button on:click={handleIndianaJonesClick}>Indiana Jones</button>
 		<button on:click={handleJohnWayneClick}>John Wayne</button>
 		<button on:click={handleJohnWickClick}>John Wick</button>
+		<button on:click={handleJurassicParkClick}>Jurassic Park</button>
 		<button on:click={handleKingsMenClick}>KingsMen</button>
 		<button on:click={handlePiratesClick}>Pirates</button>
 		<button on:click={handleStarTrekClick}>Star Trek</button>
