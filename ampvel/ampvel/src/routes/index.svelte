@@ -39,7 +39,7 @@
 
 	let tvcount;
 	onMount(async () => {
-		fetch(`http://192.168.0.42:9999/TVDBCount`, {mode: "cors", method: "GET"})
+		fetch(`http://192.168.0.42:8888/TVDBCount`, {mode: "cors", method: "GET"})
 		.then(r => r.json())
 		.then(data => {
 			console.log(data)
@@ -50,7 +50,7 @@
 
     
 	async function getMovSetUp() {
-		await fetch(`http://192.168.0.42:8888/SetUp`, {mode: "cors", method: "GET"})
+		await fetch(`http://192.168.0.42:8888/MovSetUp`, {mode: "cors", method: "GET"})
 		.then(r => r.json())
 		.then(data => {
 			console.log(data)
@@ -63,7 +63,7 @@
 	}
 
 	async function getTVSetUp() {
-		await fetch(`http://192.168.0.42:9999/SetUp`, {mode: "cors", method: "GET"})
+		await fetch(`http://192.168.0.42:8888/TVSetUp`, {mode: "cors", method: "GET"})
 		.then(r => r.json())
 		.then(data => {
 			console.log(data)
@@ -79,7 +79,7 @@
 
 
 	async function getMovUpDate() {
-		await fetch(`http://192.168.0.42:8888/UpDate`, {mode: "cors", method: "GET"})
+		await fetch(`http://192.168.0.42:8888/MovUpDate`, {mode: "cors", method: "GET"})
 		.then(r => r.json())
 		.then(data => {
 			console.log(data)
@@ -92,7 +92,7 @@
 	}
 
 	async function getTVUpDate() {
-		await fetch(`http://192.168.0.42:9999/UpDate`, {mode: "cors", method: "GET"})
+		await fetch(`http://192.168.0.42:8888/TVUpDate`, {mode: "cors", method: "GET"})
 		.then(r => r.json())
 		.then(data => {
 			console.log(data)
