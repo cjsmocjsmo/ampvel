@@ -9,7 +9,7 @@
 
     onMount(
         async function getDiscovery() {
-            let addr = `http://192.168.0.42:9999/intDiscovery?season=01`
+            let addr = `http://192.168.0.42:8888/intDiscovery?season=01`
             fetch(addr, {mode: "cors", method: "GET"})
             .then(r => r.json())
             .then(data => {
@@ -30,7 +30,7 @@
     }
 
     async function getPlayMedia(x) {
-        let addr = `http://192.168.0.42:9999/playMediaReact?tvshow=${x}`
+        let addr = `http://192.168.0.42:8888/playMediaReact?tvshow=${x}`
         fetch(addr, {mode: "cors", method: "GET"})
         .then(r => r.json())
         .then(data => {

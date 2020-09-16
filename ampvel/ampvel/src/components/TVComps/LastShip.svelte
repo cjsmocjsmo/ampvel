@@ -5,7 +5,7 @@
     let LSshowlistcount;
 
     async function getLS(x) {
-        let addr = `http://192.168.0.42:9999/intLastShip?season=${x}`
+        let addr = `http://192.168.0.42:8888/intLastShip?season=${x}`
         fetch(addr, {mode: "cors", method: "GET"})
         .then(r => r.json())
         .then(data => {
@@ -39,7 +39,7 @@
     }
 
     async function getPlayMedia(x) {
-        let addr = `http://192.168.0.42:9999/playMediaReact?tvshow=${x}`
+        let addr = `http://192.168.0.42:8888/playMediaReact?tvshow=${x}`
         fetch(addr, {mode: "cors", method: "GET"})
         .then(r => r.json())
         .then(data => {

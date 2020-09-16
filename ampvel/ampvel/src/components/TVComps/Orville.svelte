@@ -8,7 +8,7 @@
 
 
     async function getOrville(x) {
-        let addr = `http://192.168.0.42:9999/intOrville?season=${x}`
+        let addr = `http://192.168.0.42:8888/intOrville?season=${x}`
         fetch(addr, {mode: "cors", method: "GET"})
         .then(r => r.json())
         .then(data => {
@@ -33,7 +33,7 @@
     }
 
     async function getPlayMedia(x) {
-        let addr = `http://192.168.0.42:9999/playMediaReact?tvshow=${x}`
+        let addr = `http://192.168.0.42:8888/playMediaReact?tvshow=${x}`
         fetch(addr, {mode: "cors", method: "GET"})
         .then(r => r.json())
         .then(data => {
