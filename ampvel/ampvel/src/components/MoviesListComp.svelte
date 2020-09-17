@@ -15,7 +15,9 @@
 
 
 	async function getPlayMov(mov) {
-		await fetch(`${omxaddr_value}/playMediaReact?movie=${mov}`, {mode: "cors", method: "GET"})
+        let addr = `${omxaddr_value}/playMediaReact?movie=${mov}`
+        console.log(addr)
+		await fetch(addr, {mode: "cors", method: "GET"})
 		.then(r => r.json())
 		.then(data => {
             console.log(data)

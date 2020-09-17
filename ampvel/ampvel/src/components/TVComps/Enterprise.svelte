@@ -38,7 +38,9 @@
     }
 
     async function getPlayMedia(x) {
-        let addr = `http://192.168.0.42:8888/playMediaReact?tvshow=${x}`
+        let y = "/media/pi/PiTB/media/TVShows" + x
+        let addr = `http://192.168.0.42:8888/playMediaReact?movie=${y}`
+        console.log(addr)
         fetch(addr, {mode: "cors", method: "GET"})
         .then(r => r.json())
         .then(data => {
