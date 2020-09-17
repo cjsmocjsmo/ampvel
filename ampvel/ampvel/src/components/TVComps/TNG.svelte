@@ -92,7 +92,7 @@
         {#if TNGshowlistcount > 0}
             {#each TNGshowlist as sshow }
                 <li>
-                    <a href="tvshows" on:click={handlePlayTNG(sshow.movfspath)}>{sshow.title}</a>
+                    <a href="tvshows" on:click={handlePlayTNG(sshow.tvfspath)}>{sshow.title}</a>
                     <span>{sshow.episode}</span>
                 </li>
             {/each}

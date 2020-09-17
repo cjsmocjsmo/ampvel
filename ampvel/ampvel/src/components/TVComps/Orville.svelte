@@ -6,7 +6,6 @@
     let ORVshowlistcount;
     let visibleOrv = false
 
-
     async function getOrville(x) {
         let addr = `http://192.168.0.42:8888/intOrville?season=${x}`
         fetch(addr, {mode: "cors", method: "GET"})
@@ -43,10 +42,8 @@
 
     let handlePlayShowOr = (media) => {
         if (LP) {
-            console.log(media)
             let foo = media.split("TVShows", 2)
             let newpath = `http://192.168.0.42:8082` + media
-            console.log(newpath)
             TVlocalplayURL.set(newpath)
             visibleOrv = false
         } else {
@@ -68,7 +65,7 @@
         {#if ORVshowlistcount > 0}
             {#each ORVshowlist as sshow }
                 <li>
-                    <a href="tvshows" on:click={handlePlayShowOr(sshow.movfspath)}>{sshow.title}</a>
+                    <a href="tvshows" on:click={handlePlayShowOr(sshow.tvfspath)}>{sshow.title}</a>
                     <span>{sshow.episode}</span>
                 </li>
             {/each}

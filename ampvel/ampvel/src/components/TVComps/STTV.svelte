@@ -73,7 +73,7 @@
         {#if showlistcount > 0}
             {#each showlist as sshow }
                 <li>
-                    <a href="tvshows" on:click={handlePlayShowSTTV(sshow.movfspath)}>{sshow.title}</a>
+                    <a href="tvshows" on:click={handlePlayShowSTTV(sshow.tvfspath)}>{sshow.title}</a>
                     <span>{sshow.episode}</span>
                 </li>
             {/each}
