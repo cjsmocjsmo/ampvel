@@ -8,6 +8,7 @@
     import VOY from '../components/TVComps/Voyager.svelte'
     import LS from '../components/TVComps/LastShip.svelte'
     import LIS from '../components/TVComps/LostInSpace.svelte'
+    import PICARD from '../components/TVComps/Picard.svelte'
     export let LOCALPLAY;
 </script>
 
@@ -20,6 +21,7 @@
     <VOY LP={LOCALPLAY}/>
     <LS LP={LOCALPLAY}/>
     <LIS LP={LOCALPLAY} />
+    <PICARD LP={LOCALPLAY} />
 </nav>
 
 <style>
