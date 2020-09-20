@@ -160,11 +160,11 @@
 
 <style>
 
-	iframe {
+	/* iframe {
 		width: 720px;
 		height: 505px;
 		border: 0 none;
-	}
+	} */
 
 	#MovSetup1 {
 		/* background-color: red; */

@@ -8,8 +8,8 @@
     let visibleDis = false
 
     // onMount(
-        async function getPicard(x) {
-            let addr = `http://192.168.0.42:8888/intPicard?season=01`
+        async function getMandalorian(x) {
+            let addr = `http://192.168.0.42:8888/intMandalorian?season=01`
             fetch(addr, {mode: "cors", method: "GET"})
             .then(r => r.json())
             .then(data => {
@@ -21,12 +21,12 @@
         }
     //)
 
-    let handlePicard1 = () => {
-        let promise = getPicard(`01`).catch(err => console.log(err));
+    let handleMandalorian1 = () => {
+        let promise = getMandalorian(`01`).catch(err => console.log(err));
     }
 
-    let handlePicard2 = () => {
-        let promise = getPicard(`02`).catch(err => console.log(err));
+    let handleMandalorian2 = () => {
+        let promise = getMandalorian(`02`).catch(err => console.log(err));
     }
 
     let fuckDis = () => {
@@ -67,12 +67,12 @@
     }
 </script>
 
-<button on:click={fuckDis}>Picard</button>
+<button on:click={fuckDis}>Mandalorian</button>
 
 {#if visibleDis}
     <nav>
-        <button on:click={handlePicard1}>s1</button>
-        <button on:click={handlePicard2}>s2</button>
+        <button on:click={handleMandalorian1}>s1</button>
+        <button on:click={handleMandalorian2}>s2</button>
     </nav>
     <ul>
         {#if showlistcount > 0}

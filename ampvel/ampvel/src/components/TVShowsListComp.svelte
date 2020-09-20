@@ -9,6 +9,7 @@
     import LS from '../components/TVComps/LastShip.svelte'
     import LIS from '../components/TVComps/LostInSpace.svelte'
     import PICARD from '../components/TVComps/Picard.svelte'
+    import MAND from '../components/TVComps/Mandalorian.svelte'
     export let LOCALPLAY;
 </script>
 
@@ -22,6 +23,7 @@
     <LS LP={LOCALPLAY}/>
     <LIS LP={LOCALPLAY} />
     <PICARD LP={LOCALPLAY} />
+    <MAND LP={LOCALPLAY} />
 </nav>
 
 <style>
