@@ -133,6 +133,11 @@
 		let promise = getMovies(movs).catch(err => console.log(err));
 	}
 
+	let handleFantasyClick = () => {
+		let movs = "intFantasy"
+		let promise = getMovies(movs).catch(err => console.log(err));
+	}
+
 	let visible = false
 	let fuck = () => {
         if (visible) {
@@ -168,6 +173,10 @@
 		<button on:click={handleCartoonsClick}>Cartoons</button>
 		<button on:click={handleComedyClick}>Comedy</button>
 		<button on:click={handleDramaClick}>Drama</button>
+
+		<button on:click={handleFantasyClick}>Fantasy</button>
+
+
 		<button on:click={handleSciFiClick}>SciFi</button>
 		<button on:click={handleMiscClick}>Misc</button>
 		<button on:click={handleDieHardClick}>Die Hard</button>
