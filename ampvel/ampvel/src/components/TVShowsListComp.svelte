@@ -10,6 +10,7 @@
     import LIS from '../components/TVComps/LostInSpace.svelte'
     import PICARD from '../components/TVComps/Picard.svelte'
     import MAND from '../components/TVComps/Mandalorian.svelte'
+    import ACARB from '../components/TVComps/AlteredCarbon.svelte'
     export let LOCALPLAY;
 </script>
 
@@ -24,6 +25,7 @@
     <LIS LP={LOCALPLAY} />
     <PICARD LP={LOCALPLAY} />
     <MAND LP={LOCALPLAY} />
+    <ACARB LP={LOCALPLAY} />
 </nav>
 
 <style>
