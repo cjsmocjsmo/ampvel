@@ -29,6 +29,11 @@
         let promise = getDiscovery(`02`).catch(err => console.log(err));
     }
 
+    let handleDiscovery3 = () => {
+        let promise = getDiscovery(`03`).catch(err => console.log(err));
+    }
+
+
     let fuckDis = () => {
         if (visibleDis) {
             visibleDis = false
@@ -73,6 +78,7 @@
     <nav>
         <button on:click={handleDiscovery1}>s1</button>
         <button on:click={handleDiscovery2}>s2</button>
+        <button on:click={handleDiscovery3}>s3</button>
     </nav>
     <ul>
         {#if showlistcount > 0}
