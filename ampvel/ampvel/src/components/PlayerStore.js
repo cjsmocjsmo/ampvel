@@ -19,8 +19,8 @@ export const omxaddr = writable(`http://192.168.0.42:8888`)
 
 
 //movies http
-export const movaddr = writable(`http://192.168.0.42:8081`)
-
+// export const movaddr = writable(`http://192.168.0.42:8081`)
+export const movaddr = writable(`http://192.168.0.42:8062`)
 
 //omxserver
 export const movhttp = writable(`192.168.0.42:8181`)

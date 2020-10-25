@@ -45,7 +45,7 @@
     let handlePlayShowOr = (media) => {
         if (LP) {
             let foo = media.split("TVShows", 2)
-            let newpath = `http://192.168.0.42:8082` + media
+            let newpath = `http://192.168.0.42:8063` + media
             TVlocalplayURL.set(newpath)
             visibleOrv = false
         } else {

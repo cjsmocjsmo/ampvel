@@ -53,7 +53,7 @@
             console.log(media)
 
             let foo = media.split("TVShows", 2)
-            let newpath = `http://192.168.0.42:8082` + foo[1]
+            let newpath = `http://192.168.0.42:8063` + foo[1]
             console.log(newpath)
             TVlocalplayURL.set(newpath)
             visibleLS = false
