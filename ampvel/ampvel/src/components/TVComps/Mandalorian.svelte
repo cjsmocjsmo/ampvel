@@ -9,7 +9,7 @@
 
     // onMount(
         async function getMandalorian(x) {
-            let addr = `http://192.168.0.42:8888/intMandalorian?season=01`
+            let addr = `http://192.168.0.42:8888/intMandalorian?season=${x}`
             fetch(addr, {mode: "cors", method: "GET"})
             .then(r => r.json())
             .then(data => {
