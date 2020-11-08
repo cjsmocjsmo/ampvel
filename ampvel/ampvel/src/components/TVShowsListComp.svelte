@@ -11,6 +11,7 @@
     import PICARD from '../components/TVComps/Picard.svelte'
     import MAND from '../components/TVComps/Mandalorian.svelte'
     import ACARB from '../components/TVComps/AlteredCarbon.svelte'
+    import LOWERDECKS from '../components/TVComps/LowerDecks.svelte'
     export let LOCALPLAY;
 </script>
 
@@ -26,6 +27,7 @@
     <PICARD LP={LOCALPLAY} />
     <MAND LP={LOCALPLAY} />
     <ACARB LP={LOCALPLAY} />
+    <LOWERDECKS LP={LOCALPLAY} />
 </nav>
 
 <style>
