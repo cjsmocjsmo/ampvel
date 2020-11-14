@@ -138,6 +138,21 @@
 		let promise = getMovies(movs).catch(err => console.log(err));
 	}
 
+
+	let handleRiddickClick = () => {
+		let movs = "intRiddick"
+		let promise = getMovies(movs).catch(err => console.log(err));
+	}
+
+	let handleTomCruizeClick = () => {
+		let movs = "intTomCruize"
+		let promise = getMovies(movs).catch(err => console.log(err));
+	}
+
+	let handleXMenClick = () => {
+		let movs = "intXMen"
+		let promise = getMovies(movs).catch(err => console.log(err));
+	}
 	let visible = false
 	let fuck = () => {
         if (visible) {
@@ -193,6 +208,13 @@
 		<button on:click={handleSuperHerosClick}>Super Heros</button>
 		<button on:click={handleTremorsClick}>Tremors</button>
 		<button on:click={handleMenInBlackClick}>Men In Black</button>
+
+		<button on:click={handleRiddickClick}>Riddick</button>
+		<button on:click={handleTomCruizeClick}>Tom Cruize</button>
+		<button on:click={handleXMenClick}>X-Men</button>
+
+
+
 	</ul>
 </nav>
 
