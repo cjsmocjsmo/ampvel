@@ -12,6 +12,7 @@
     import MAND from '../components/TVComps/Mandalorian.svelte'
     import ACARB from '../components/TVComps/AlteredCarbon.svelte'
     import LOWERDECKS from '../components/TVComps/LowerDecks.svelte'
+    import RAISEDBYWOLVES from '../components/TVComps/RaisedByWolves.svelte'
     export let LOCALPLAY;
 </script>
 
@@ -28,6 +29,7 @@
     <MAND LP={LOCALPLAY} />
     <ACARB LP={LOCALPLAY} />
     <LOWERDECKS LP={LOCALPLAY} />
+    <RAISEDBYWOLVES LP={LOCALPLAY} />
 </nav>
 
 <style>
